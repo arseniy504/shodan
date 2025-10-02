@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeviceSearch - Network Device Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>DeviceSearch</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#search">Search</a>
+                <a href="#about">About</a>
+                <a href="#api">API</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Find Every Device Connected to the Internet</h1>
+                <p>Advanced network device search engine - Shodan clone</p>
+                
+                <div class="search-container" id="search">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Search for devices, services, IP addresses...">
+                        <button id="searchBtn">Search</button>
+                    </div>
+                    <div class="search-options">
+                        <select id="deviceType">
+                            <option value="">All Devices</option>
+                            <option value="webcam">Webcams</option>
+                            <option value="router">Routers</option>
+                            <option value="server">Servers</option>
+                            <option value="printer">Printers</option>
+                            <option value="iot">IoT Devices</option>
+                        </select>
+                        <select id="country">
+                            <option value="">All Countries</option>
+                            <option value="us">United States</option>
+                            <option value="ua">Ukraine</option>
+                            <option value="de">Germany</option>
+                            <option value="fr">France</option>
+                        </select>
+                        <input type="text" id="portFilter" placeholder="Port number...">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div class="container">
+                <div class="results-header">
+                    <h2>Search Results</h2>
+                    <div class="results-stats">
+                        <span id="resultsCount">0 devices found</span>
+                        <span id="searchTime">Time: 0s</span>
+                    </div>
+                </div>
+                
+                <div class="results-container">
+                    <div id="loading" class="loading hidden">
+                        <div class="spinner"></div>
+                        <p>Scanning network devices...</p>
+                    </div>
+                    
+                    <div id="resultsList" class="results-list">
+                        <div class="no-results">
+                            <h3>No search performed yet</h3>
+                            <p>Enter your search query above to find network devices</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section" id="about">
+            <div class="container">
+                <h2>About DeviceSearch</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Network Scanning</h3>
+                        <p>Discover devices across multiple network ranges and protocols</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Service Detection</h3>
+                        <p>Identify running services and open ports on devices</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Real-time Results</h3>
+                        <p>Get live data from network scans and device discovery</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="api-section" id="api">
+            <div class="container">
+                <h2>API Access</h2>
+                <div class="api-docs">
+                    <div class="api-endpoint">
+                        <h3>GET /api/search?q=query</h3>
+                        <p>Search for network devices</p>
+                        <code>https://yoursite.github.io/api/search?q=webcam</code>
+                    </div>
+                    <div class="api-endpoint">
+                        <h3>GET /api/scan?network=192.168.1.0/24</h3>
+                        <p>Scan specific network range</p>
+                        <code>https://yoursite.github.io/api/scan?network=10.0.0.0/24</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 DeviceSearch. Network exploration tool.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
